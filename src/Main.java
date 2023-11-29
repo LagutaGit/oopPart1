@@ -1,3 +1,5 @@
+import javax.print.PrintService;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -16,16 +18,27 @@ public class Main {
         Person[] people = {
                 new Person("Сара", 30, 101),
                 new Person("Иван", 31, 102),
-                new Person("Дмитрий", 35, 103), new Person("Сара", 30, 101),
+                new Person("Дмитрий", 35, 103),
+                new Person("Сара", 30, 101),
                 new Person("Иван", 31, 102),
                 new Person("Дмитрий", 35, 103)
         };
 
-        System.out.println("Размер списка " + people.length);
-//        Распечатаем содержимое
-        for (int i = 0; i < people.length; i++) {
-            Person person = people[i];
-            System.out.println("Имя: " + person.getName() + "; Возраст: " + person.getAge() + "; Телефон: " + person.getPhoneNumber());
-        }
+        Custumers[] custumerss = {
+                new Custumers("Сара", 30, 101, 11122233),
+                new Custumers("Иван", 31, 102,12211223),
+                new Custumers("Дмитрий", 35, 103, 12332121),
+                new Custumers("Сара", 30, 101, 12332121),
+                new Custumers("Иван", 31, 102, 12332121),
+                new Custumers("Дмитрий", 35, 103, 12332121)
+        };
+
+//        Делаем перегрузку, это 2 метода которые делают одинаковые действия отличаются только аргументы которые
+//        мы передаём
+
+        PrintServices printServices = new PrintServices();
+        printServices.print(people);
+        printServices.print(custumerss);
+
     }
 }
